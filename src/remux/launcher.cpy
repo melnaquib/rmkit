@@ -727,15 +727,8 @@ class App: public IApp:
       self.show_launcher()
     }
 
-    tap := new input::TapGesture()
-    tap->fingers = 3
-    tap->events.activate += PLS_LAMBDA(auto d) {
-      self.show_launcher()
-    }
-
     ui::MainLoop::gestures.push_back(left)
     ui::MainLoop::gestures.push_back(right)
-    ui::MainLoop::gestures.push_back(tap)
 
     ui::MainLoop::key_event += PLS_DELEGATE(self.handle_key_event)
     ui::MainLoop::motion_event += PLS_DELEGATE(self.handle_motion_event)
